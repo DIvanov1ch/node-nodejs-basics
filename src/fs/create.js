@@ -1,31 +1,20 @@
 import path from "path";
-import { open, close, writeFile } from "node:fs";
+import { writeFile } from "node:fs/promises";
 
 const content = "I am fresh and young";
 const FOLDER_NAME = "files";
 const FILE_NAME = "fresh.txt";
 const ERROR_MESSAGE = "FS operation failed";
-const pathToFile = path.join(import.meta.dirname, FOLDER_NAME, FILE_NAME);
+const filepath = path.join(import.meta.dirname, FOLDER_NAME, FILE_NAME);
 
 const create = async () => {
-  open(pathToFile, "wx", (err, fd) => {
-    if (err) {
-      if (err.code === "EEXIST") {
-        throw new Error(ERROR_MESSAGE);
-      }
-      throw err;
+  try {
+    await writeFile(filepath, content, { flag: "wx" });
+  } catch (error) {
+    if (error.code === "EEXIST") {
+      throw new Error(ERROR_MESSAGE);
     }
-
-    try {
-      writeFile(pathToFile, content, "utf8", (err) => {
-        if (err) throw err;
-      });
-    } finally {
-      close(fd, (err) => {
-        if (err) throw err;
-      });
-    }
-  });
+  }
 };
 
 await create();

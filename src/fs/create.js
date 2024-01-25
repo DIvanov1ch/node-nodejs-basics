@@ -1,6 +1,7 @@
 import { dirname, join } from "path";
 import { fileURLToPath } from "url";
 import { writeFile } from "node:fs/promises";
+import { error } from "console";
 
 const content = "I am fresh and young";
 const FOLDER_NAME = "files";
@@ -20,4 +21,4 @@ const create = async () => {
   }
 };
 
-await create();
+await create().catch(error);

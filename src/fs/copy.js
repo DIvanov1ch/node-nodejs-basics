@@ -29,4 +29,4 @@ const copy = async () => {
   }
 };
 
-await copy();
+await copy().catch(error);

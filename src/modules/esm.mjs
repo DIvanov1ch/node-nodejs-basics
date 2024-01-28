@@ -3,7 +3,7 @@ import { release, version } from "os";
 import { createServer as createServerHttp } from "http";
 import { fileURLToPath } from "url";
 import { createRequire } from 'node:module';
-import("./files/c.js");
+await import("./files/c.js");
 
 const random = Math.random();
 const require = createRequire(import.meta.url);

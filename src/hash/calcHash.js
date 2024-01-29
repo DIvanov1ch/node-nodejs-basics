@@ -1,8 +1,8 @@
 import { pipeline } from "stream/promises";
-import { createReadStream } from "fs";
-import { createHash } from "crypto";
-import { dirname, join } from "path";
-import { fileURLToPath } from "url";
+import { createReadStream } from "node:fs";
+import { createHash } from "node:crypto";
+import { dirname, join } from "node:path";
+import { fileURLToPath } from "node:url";
 import { stdout } from "process";
 
 const FOLDER_NAME = "files";

@@ -1,7 +1,7 @@
-import { dirname, join } from "path";
-import { fileURLToPath } from "url";
+import { dirname, join } from "node:path";
+import { fileURLToPath } from "node:url";
 import { readFile } from "node:fs/promises";
-import { error, log } from "console";
+import { error, log } from "node:console";
 
 const ERROR_MESSAGE = "FS operation failed";
 const sourceFolderName = "files";

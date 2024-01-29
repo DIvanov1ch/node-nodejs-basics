@@ -1,7 +1,7 @@
-import { dirname, join } from "path";
-import { fileURLToPath } from "url";
+import { dirname, join } from "node:path";
+import { fileURLToPath } from "node:url";
 import { access, rename as renameFile, readdir } from "node:fs/promises";
-import { error } from "console";
+import { error } from "node:console";
 
 const fileToRename = "wrongFilename.txt";
 const newFileName = "properFilename.md";
@@ -18,7 +18,7 @@ const rename = async () => {
     await access(fileToRenamePath);
     const files = await readdir(sourcePath);
     if (files.includes(newFileName)) {
-      const existError = new Error(ERROR_MESSAGE);
+      const existError = new Error("File already exists");
       existError.code = "EEXIST";
       throw existError;
     }

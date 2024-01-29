@@ -1,5 +1,5 @@
-import { dirname, join } from "path";
-import { fileURLToPath } from "url";
+import { dirname, join } from "node:path";
+import { fileURLToPath } from "node:url";
 import { fork } from "node:child_process";
 import { stdout, stdin } from "process";
 
@@ -11,8 +11,8 @@ const filepath = join(__dirname, FOLDER_NAME, FILE_NAME);
 
 const spawnChildProcess = async (args) => {
   const child = fork(filepath, args, { silent: true });
-  child.stdout.pipe(stdout);
   stdin.pipe(child.stdin);
+  child.stdout.pipe(stdout);
 };
 
 // Put your arguments in function call to test this functionality

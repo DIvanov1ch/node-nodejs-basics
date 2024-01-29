@@ -1,6 +1,5 @@
-import { createReadStream } from "fs";
 import { stdin, stdout } from "process";
-import { Transform } from "stream";
+import { Transform } from "node:stream";
 
 const transform = async () => {
   const reverse = new Transform({

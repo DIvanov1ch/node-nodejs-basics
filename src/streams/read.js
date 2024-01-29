@@ -1,6 +1,6 @@
-import { dirname, join } from "path";
-import { fileURLToPath } from "url";
-import { createReadStream } from "fs";
+import { dirname, join } from "node:path";
+import { fileURLToPath } from "node:url";
+import { createReadStream } from "node:fs";
 import { stdout } from "process";
 
 const FOLDER_NAME = "files";

@@ -1,7 +1,7 @@
-import { dirname, join } from "path";
-import { fileURLToPath } from "url";
-import { Worker, isMainThread } from "worker_threads";
-import { cpus } from "os";
+import { dirname, join } from "node:path";
+import { fileURLToPath } from "node:url";
+import { Worker, isMainThread } from "node:worker_threads";
+import { cpus } from "node:os";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const workerFilename = "worker.js";

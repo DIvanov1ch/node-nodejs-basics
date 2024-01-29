@@ -1,4 +1,4 @@
-import { parentPort } from "worker_threads";
+import { parentPort } from "node:worker_threads";
 
 // n should be received from main thread
 const nthFibonacci = (n) =>

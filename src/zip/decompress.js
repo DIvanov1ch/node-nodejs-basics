@@ -1,8 +1,8 @@
-import { dirname, join } from "path";
-import { fileURLToPath } from "url";
-import { createGunzip } from "zlib";
+import { dirname, join } from "node:path";
+import { fileURLToPath } from "node:url";
+import { createGunzip } from "node:zlib";
 import { pipeline } from "stream/promises";
-import { createReadStream, createWriteStream } from "fs";
+import { createReadStream, createWriteStream } from "node:fs";
 
 const FOLDER_NAME = "files";
 const fileToDecompress = "archive.gz";

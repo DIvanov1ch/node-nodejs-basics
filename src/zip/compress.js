@@ -1,9 +1,9 @@
-import { dirname, join } from "path";
-import { fileURLToPath } from "url";
-import { createGzip } from "zlib";
+import { dirname, join } from "node:path";
+import { fileURLToPath } from "node:url";
+import { createGzip } from "node:zlib";
 import { pipeline } from "stream/promises";
-import { createReadStream, createWriteStream } from "fs";
-import { error } from "console";
+import { createReadStream, createWriteStream } from "node:fs";
+import { error } from "node:console";
 
 const FOLDER_NAME = "files";
 const fileToCompress = "fileToCompress.txt";
